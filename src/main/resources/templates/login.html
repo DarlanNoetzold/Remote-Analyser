@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html>
+	<meta charset="UTF-8"/>
+	<head th:replace="~{base :: head}"></head>
+	<body id="backforall">
+		<div th:replace="~{base :: logo}"></div>
+	
+		<div class="container">
+			<div th:replace="~{base :: titulo('Login')}"></div>
+		
+			<div class="cardcolor card mb-3">
+				<form th:action="@{/login}" class="card-body" method="post">
+					<div class="form-group">
+						<label>Usuário</label>
+						<input name="username"  class="form-control" placeholder="usuário"/>
+					</div>
+					<div class="form-group">
+						<label>Senha</label>
+						<input type="password" name="password" class="form-control" placeholder="senha"/>
+					</div>
+					<button class="engraved buttoncolor" type="submit">Login</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

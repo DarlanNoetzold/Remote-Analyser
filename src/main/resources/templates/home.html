@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{base :: head}" > 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body id="backforall">
+		<div th:replace="~{base :: logo}"></div>
+	
+		<div class="container">
+			<div th:replace="~{base :: titulo('Alertas')}" ></div>
+
+			<div class="card mb-3" th:each="alerta : ${alertas}">
+				<div class="card-header alert-dark" th:text="${alerta.id}">id</div>
+				
+				<div class="cardcolor card-body">
+					<div class="row">
+						<div class="form-group col-12 col-sm-8  mb-3">
+							<div>Endereco MAC do PC</div>
+							<div> <input class="form-control" th:value="${alerta.pcId}" value="Id do PC"/></div>
+							
+							<div>Entrada da texto que gerou o Alerta</div>
+							<div>
+								<textarea class="form-control" th:text="${alerta.imagem.productImg}"></textarea>
+							</div>
+
+							<div>Processos</div>
+							<div>
+								<textarea class="form-control" th:text="${alerta.processos}"></textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4">
+							<div class="container-anim">
+								<img class="img-thumbnail" th:src="@{'data:image/png;base64,'+${alerta.imagem.generateBase64Image()}}"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="font-size: large" class="panel-footer">
+				Total Items [[${totalItems}]] : Page [[${currentPage}]] of [[${totalPages}]]
+				&nbsp; &nbsp; - &nbsp;
+				<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+        			<a th:href="@{'/home/page/' + ${i}}">[[${i}]]</a>
+        			&nbsp; &nbsp;
+    			</span>
+			</div>
+			<br>
+		</div>
+
+	</body>
+</html>
