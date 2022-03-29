@@ -27,4 +27,19 @@
 <br>Link: https://github.com/DarlanNoetzold/spyware
 
 ---
+## Imagens da interface:
+### Tela de Login:
+![image](https://user-images.githubusercontent.com/41628589/160593312-90b87d92-2403-4dcf-a635-b91360c191cf.png)
+
+### Home:
+![image](https://user-images.githubusercontent.com/41628589/160593796-949da8d8-6076-4c6f-9d2a-9bd09a28a8a7.png)
+
+### Pagination da Home:
+![image](https://user-images.githubusercontent.com/41628589/160594065-62737d49-b071-44a1-afec-772d92094578.png)
+
+### Busca:
+![image](https://user-images.githubusercontent.com/41628589/160594303-f9e669ce-7d2f-4d45-ad08-63bb4eff3f3f.png)
+
+---
+
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
