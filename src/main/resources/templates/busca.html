@@ -42,6 +42,8 @@
                     <div class="container-anim">
                         <img class="img-thumbnail" th:src="@{'data:image/png;base64,'+${alerta.imagem.generateBase64Image()}}"/>
                     </div>
+                    <br>
+                    <a class="engraved buttoncolor" th:href="@{/home/remover/{id}(id = ${alerta.id}) }">Remover</a>
                 </div>
             </div>
         </div>
