@@ -36,6 +36,13 @@ public class HomeController {
 		return home(model, 1);
 	}
 
+	@GetMapping("/remover/{id}")
+	public String remover(Model model, @PathVariable("id") Long id) {
+		alertaService.removeAlerta(loginProp.getTokenBearer(loginService.getToken(loginProp)), id);
+		getAllPages(model);
+		return "home";
+	}
+
 	@GetMapping("/page/{pageNumber}")
 	public String home(Model model, @PathVariable("pageNumber") int currentPage) {
 		Pageable pageable = PageRequest.of(currentPage-1,5);
