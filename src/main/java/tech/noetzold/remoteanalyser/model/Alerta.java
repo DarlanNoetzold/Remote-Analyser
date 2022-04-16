@@ -1,10 +1,11 @@
 package tech.noetzold.remoteanalyser.model;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 @Entity
 public class Alerta {
@@ -20,8 +21,12 @@ public class Alerta {
     @ManyToOne(cascade=CascadeType.PERSIST)
     private Imagem imagem;
 
-    @Lob
+    @Type(type="text")
     private String processos;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_cadastro", nullable = false)
+    private Calendar data_cadastro;
 
     public Long getId() {
         return id;
@@ -49,6 +54,17 @@ public class Alerta {
 
     public String getProcessos() {
         return processos;
+    }
+
+    public String getData_cadastro() {
+        data_cadastro.add(Calendar.DATE, 1);
+        SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+        String formatted = format1.format(data_cadastro.getTime());
+        return formatted;
+    }
+
+    public void setData_cadastro(Calendar data_cadastro) {
+        this.data_cadastro = data_cadastro;
     }
 
     public void setProcessos(String processos) {

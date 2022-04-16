@@ -15,6 +15,7 @@
 				<div class="cardcolor card-body">
 					<div class="row">
 						<div class="form-group col-12 col-sm-8  mb-3">
+							<br>
 							<div>Endereco MAC do PC</div>
 							<div> <input class="form-control" th:value="${alerta.pcId}" value="Id do PC"/></div>
 							
@@ -27,13 +28,17 @@
 							<div>
 								<textarea class="form-control" th:text="${alerta.processos}"></textarea>
 							</div>
+
 						</div>
 						<div class="col-12 col-sm-4">
+							<div align="center" style="background-color:black;opacity:50%;padding:2px;" class="form-group" th:text="${alerta.data_cadastro}">data_cadastro</div>
 							<div class="container-anim">
 								<img class="img-thumbnail" th:src="@{'data:image/png;base64,'+${alerta.imagem.generateBase64Image()}}"/>
 							</div>
-							<br>
-							<a class="engraved buttoncolor" th:href="@{/home/remover/{id}(id = ${alerta.id}) }">Remover</a>
+							<div align="center">
+								<br>
+								<a class="buttoncolor" th:href="@{/home/remover/{id}(id = ${alerta.id}) }">Remover</a>
+							</div>
 						</div>
 					</div>
 				</div>
