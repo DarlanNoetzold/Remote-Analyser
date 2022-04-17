@@ -3,10 +3,10 @@ package tech.noetzold.remoteanalyser.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import tech.noetzold.remoteanalyser.model.User;
+import tech.noetzold.remoteanalyser.model.UserImp;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String>{
+public interface UserRepository extends JpaRepository<UserImp, String>{
 
-	User findByUsername(String username);
+	UserImp findByUsername(String username);
 }
