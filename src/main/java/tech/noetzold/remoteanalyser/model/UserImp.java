@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +16,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserImp implements UserDetails {
 
 	@Id
+	@NotNull(message = "Login não pode ser nulo")
+	@NotEmpty(message = "Login não pode ser vazio")
 	private String username;
+
+	@NotNull(message = "Senha não pode ser nulo")
+	@NotEmpty(message = "Senha não pode ser vazio")
 	private String password;
 	private Boolean enabled;
 
