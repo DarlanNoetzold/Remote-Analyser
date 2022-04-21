@@ -9,6 +9,10 @@
     <div th:replace="~{base :: titulo('Cadastro')}"></div>
 
     <div class="cardcolor card mb-3">
+        <div class="error-message" th:each = "m : ${msg}">
+            <span th:text = "${m}"></span>
+        </div>
+        <span class="success-message" th:text = "${successRegister}"></span>
         <form th:action="@{/salvarUser}" class="card-body" method="post">
             <div class="form-group">
                 <label>Usuário</label>
