@@ -1,12 +1,9 @@
 package tech.noetzold.remoteanalyser.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import tech.noetzold.remoteanalyser.model.UserImp;
-import tech.noetzold.remoteanalyser.repository.UserRepository;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
@@ -14,5 +11,13 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
+	}
+	@GetMapping
+	@RequestMapping("/login-error")
+	public ModelAndView loginError() {
+		ModelAndView mav = new ModelAndView("login");
+		System.out.println("askdjufhbasikdhugfbkasugbfaeuksrgbfawukrgbfaeruksfbawerufgbaweruksygfikaeyusgf");
+		mav.addObject("loginError", "Senha ou usuário inválido!");
+		return mav;
 	}
 }
