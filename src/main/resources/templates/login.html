@@ -9,6 +9,7 @@
 			<div th:replace="~{base :: titulo('Login')}"></div>
 		
 			<div class="cardcolor card mb-3">
+				<span class="error-message" th:text = "${loginError}"></span>
 				<form th:action="@{/login}" class="card-body" method="post">
 					<div class="form-group">
 						<label>Usuário</label>
