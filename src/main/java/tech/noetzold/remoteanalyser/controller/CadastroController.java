@@ -1,6 +1,7 @@
 package tech.noetzold.remoteanalyser.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import tech.noetzold.remoteanalyser.repository.UserRepository;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class CadastroController {
@@ -37,9 +39,7 @@ public class CadastroController {
         if(bindingResult.hasErrors()){
             ModelAndView mav = new ModelAndView("cadastro");
             List<String> msg = new ArrayList<>();
-            for (ObjectError e: bindingResult.getAllErrors()) {
-                msg.add(e.getDefaultMessage());
-            }
+            msg.add(bindingResult.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining()));
             mav.addObject("msg", msg);
             return mav;
         }
