@@ -54,8 +54,6 @@ public class HomeController {
 		model.addAttribute("totalItems", totalItems);
 		model.addAttribute("alertas", alertas.getContent());
 
-		
 		return "home";
 	}
-	
 }

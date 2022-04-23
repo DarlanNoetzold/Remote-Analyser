@@ -16,7 +16,6 @@ public class LoginController {
 	@RequestMapping("/login-error")
 	public ModelAndView loginError() {
 		ModelAndView mav = new ModelAndView("login");
-		System.out.println("askdjufhbasikdhugfbkasugbfaeuksrgbfawukrgbfaeruksfbawerufgbaweruksygfikaeyusgf");
 		mav.addObject("loginError", "Senha ou usuário inválido!");
 		return mav;
 	}

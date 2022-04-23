@@ -34,14 +34,12 @@ public class CadastroController {
     @PostMapping
     @RequestMapping("/salvarUser")
     public ModelAndView salvarUser(@Valid UserImp user, BindingResult bindingResult) {
-
         if(bindingResult.hasErrors()){
             ModelAndView mav = new ModelAndView("cadastro");
             List<String> msg = new ArrayList<>();
             for (ObjectError e: bindingResult.getAllErrors()) {
                 msg.add(e.getDefaultMessage());
             }
-
             mav.addObject("msg", msg);
             return mav;
         }
