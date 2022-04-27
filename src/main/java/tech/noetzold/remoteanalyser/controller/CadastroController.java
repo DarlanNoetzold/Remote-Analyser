@@ -38,8 +38,7 @@ public class CadastroController {
     public ModelAndView salvarUser(@Valid UserImp user, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             ModelAndView mav = new ModelAndView("cadastro");
-            List<String> msg = new ArrayList<>();
-            msg.add(bindingResult.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining()));
+            List<String> msg = bindingResult.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList());
             mav.addObject("msg", msg);
             return mav;
         }
