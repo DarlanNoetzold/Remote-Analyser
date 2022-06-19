@@ -57,10 +57,8 @@ public class Alerta {
     }
 
     public String getData_cadastro() {
-        data_cadastro.add(Calendar.DATE, 1);
         SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
-        String formatted = format1.format(data_cadastro.getTime());
-        return formatted;
+        return format1.format(data_cadastro.getTime());
     }
 
     public void setData_cadastro(Calendar data_cadastro) {
