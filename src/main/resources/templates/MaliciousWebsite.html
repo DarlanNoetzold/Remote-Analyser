@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{base :: head}" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body id="backforall">
+<div th:replace="~{base :: logo}"></div>
+
+<div class="container">
+    <div th:replace="~{base :: titulo('Websites')}" ></div>
+    <div class="cardcolor card mb-3">
+        <div class="error-message" th:each = "m : ${msg}">
+            <span th:text = "${m}"></span>
+        </div>
+        <span class="success-message" th:text = "${successRegister}"></span>
+        <form th:action="@{/maliciousWebsite/save}" th:object="${maliciousWebsite}" class="card-body" method="post">
+            <div class="form-group">
+                <label>URL</label>
+                <input name="url"  class="form-control" placeholder="url"/>
+            </div>
+            <button class="engraved buttoncolor" type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="card mb-3" th:each="maliciousWebsite : ${maliciousWebsites}">
+        <div class="card-header alert-dark" th:text="${maliciousWebsite.id}">id</div>
+
+        <div class="cardcolor card-body">
+            <div class="row">
+                <div class="form-group col-12">
+                    <div>URL</div>
+                </div>
+                <div class="form-group col-12 col-sm-10  mb-3">
+                    <div> <input class="form-control" th:value="${maliciousWebsite.url}" value="url" readonly /></div>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <div align="center">
+                        <a class="engraved buttoncolor" th:href="@{/maliciousWebsite/remover/{id}(id = ${maliciousWebsite.id}) }">Remover</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
