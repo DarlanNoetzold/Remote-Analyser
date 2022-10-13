@@ -1,18 +1,13 @@
 package tech.noetzold.remoteanalyser.model;
 
 import java.util.Collection;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import tech.noetzold.remoteanalyser.model.Alerta;
 
 @Entity
 @Table(name="users")
