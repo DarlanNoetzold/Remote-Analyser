@@ -3,7 +3,6 @@ package tech.noetzold.remoteanalyser.service;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-import tech.noetzold.remoteanalyser.model.MaliciousPort;
 import tech.noetzold.remoteanalyser.model.MaliciousProcess;
 
 import java.util.List;
