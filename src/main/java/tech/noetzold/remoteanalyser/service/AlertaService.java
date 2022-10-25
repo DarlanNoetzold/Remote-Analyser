@@ -14,12 +14,12 @@ import java.util.List;
 @FeignClient(url= "https://spyware-api.herokuapp.com" , name = "spyware")
 public interface AlertaService{
 
-    @GetMapping("/alerta")
+    @GetMapping("/alert")
     Page<Alerta> buscaAlertas(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, Pageable pageable);
 
-    @GetMapping("/alerta/pcId/{pcId}")
+    @GetMapping("/alert/pcId/{pcId}")
     List<Alerta> buscaAlertasPcId(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("pcId") String pcId);
 
-    @GetMapping("/alerta/remover/{id}")
+    @DeleteMapping("/alert/remove/{id}")
     void removeAlerta(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 }

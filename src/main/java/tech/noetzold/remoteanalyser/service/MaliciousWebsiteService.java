@@ -17,6 +17,6 @@ public interface MaliciousWebsiteService {
     @GetMapping("/website/getAll")
     List<MaliciousWebsite> buscaMaliciousWebsite(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 
-    @GetMapping("/website/remover/{id}")
+    @DeleteMapping("/website/remove/{id}")
     void removeMaliciousWebsite(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 }

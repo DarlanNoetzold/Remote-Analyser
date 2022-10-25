@@ -3,6 +3,7 @@ package tech.noetzold.remoteanalyser.model;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

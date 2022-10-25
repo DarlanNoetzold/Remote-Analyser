@@ -17,7 +17,7 @@ public interface BadLanguageService {
     @GetMapping("/badLanguage/getAll")
     List<BadLanguage> buscaBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 
-    @GetMapping("/badLanguage/remover/{id}")
+    @DeleteMapping("/badLanguage/remove/{id}")
     void removeBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 
 }

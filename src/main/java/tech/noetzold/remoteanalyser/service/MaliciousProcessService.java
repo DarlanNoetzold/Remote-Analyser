@@ -17,6 +17,6 @@ public interface MaliciousProcessService {
     @GetMapping("/process/getAll")
     List<MaliciousProcess> buscaMaliciousProcess(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 
-    @GetMapping("/process/remover/{id}")
+    @DeleteMapping("/process/remove/{id}")
     void removeMaliciousProcess(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 }

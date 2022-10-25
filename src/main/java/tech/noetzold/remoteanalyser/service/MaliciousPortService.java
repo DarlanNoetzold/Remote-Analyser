@@ -16,6 +16,6 @@ public interface MaliciousPortService {
     @GetMapping("/port/getAll")
     List<MaliciousPort> buscaMaliciousPort(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 
-    @GetMapping("/port/remover/{id}")
+    @DeleteMapping("/port/remove/{id}")
     void removeMaliciousPort(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 }
