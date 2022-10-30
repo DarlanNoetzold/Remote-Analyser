@@ -8,7 +8,7 @@ import tech.noetzold.remoteanalyser.model.MaliciousProcess;
 import java.util.List;
 
 @Service
-@FeignClient(url= "https://spyware-api.herokuapp.com" , name = "spyware")
+@FeignClient(url= "https://spyware-api-production.up.railway.app" , name = "spyware")
 public interface MaliciousProcessService {
 
     @PostMapping("/process/save")
