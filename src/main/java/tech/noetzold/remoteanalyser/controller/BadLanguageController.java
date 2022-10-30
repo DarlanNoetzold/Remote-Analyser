@@ -28,7 +28,7 @@ public class BadLanguageController {
 
     @GetMapping("/badLanguage")
     public ModelAndView badLanguage() {
-        ModelAndView modelAndView = new ModelAndView("/badLanguage");
+        ModelAndView modelAndView = new ModelAndView("badLanguage");
         List<BadLanguage> badLanguages = badLanguageService.buscaBadLanguage(loginProp.getTokenBearer(loginService.getToken(loginProp)));
         modelAndView.addObject("badLanguages", badLanguages);
 
