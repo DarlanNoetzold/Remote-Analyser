@@ -29,7 +29,7 @@ public class MaliciousWebsiteController {
 
     @GetMapping("/maliciousWebsite")
     public ModelAndView maliciousWebsite() {
-        ModelAndView modelAndView = new ModelAndView("/maliciousWebsite");
+        ModelAndView modelAndView = new ModelAndView("maliciousWebsite");
         List<MaliciousWebsite> maliciousWebsites = maliciousWebsiteService.buscaMaliciousWebsite(loginProp.getTokenBearer(loginService.getToken(loginProp)));
         modelAndView.addObject("maliciousWebsites", maliciousWebsites);
 
