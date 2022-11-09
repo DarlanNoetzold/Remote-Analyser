@@ -55,4 +55,19 @@
 
 ---
 
+## Diagramas:
+### Diagrama de Casos de uso:
+![image](https://user-images.githubusercontent.com/41628589/200906769-9158761e-9169-4cfe-b894-58e7859fc8c1.png)
+
+### Diagramas de Atividade:
+![image](https://user-images.githubusercontent.com/41628589/200906846-cf6603ad-d6ae-4640-b77e-ac35bb5f1f30.png)
+
+![image](https://user-images.githubusercontent.com/41628589/200906913-822d3be4-65bd-4c3f-88b2-9ec4b24f03a0.png)
+
+### Diagrama de arquitetura:
+![image](https://user-images.githubusercontent.com/41628589/200907023-eb8111e5-e6f1-42af-a8b6-55cfbeabbaf8.png)
+
+---
+
+
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
