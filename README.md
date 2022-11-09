@@ -45,7 +45,7 @@
 ![image](https://user-images.githubusercontent.com/41628589/160593312-90b87d92-2403-4dcf-a635-b91360c191cf.png)
 
 ### Home:
-![image](https://user-images.githubusercontent.com/41628589/160593796-949da8d8-6076-4c6f-9d2a-9bd09a28a8a7.png)
+![image](https://user-images.githubusercontent.com/41628589/200910622-72464226-5a8a-4320-99d4-7e888531272a.png)
 
 ### Pagination da Home:
 ![image](https://user-images.githubusercontent.com/41628589/160594065-62737d49-b071-44a1-afec-772d92094578.png)
