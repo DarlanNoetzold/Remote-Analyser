@@ -29,7 +29,7 @@ public class MaliciousProcessController {
 
     @GetMapping("/maliciousProcess")
     public ModelAndView maliciousProcess() {
-        ModelAndView modelAndView = new ModelAndView("maliciousProcess");
+        ModelAndView modelAndView = new ModelAndView("/maliciousProcess");
         List<MaliciousProcess> maliciousProcesss = maliciousProcessService.buscaMaliciousProcess(loginProp.getTokenBearer(loginService.getToken(loginProp)));
         modelAndView.addObject("maliciousProcesses", maliciousProcesss);
 
