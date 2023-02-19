@@ -8,7 +8,7 @@ import tech.noetzold.remoteanalyser.model.BadLanguage;
 import java.util.List;
 
 @Service
-@FeignClient(url= "https://spyware-api-production.up.railway.app" , name = "spyware")
+@FeignClient(url= "http://localhost:8091" , name = "spyware")
 public interface BadLanguageService {
 
     @PostMapping("/badLanguage/save")
