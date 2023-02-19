@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import tech.noetzold.remoteanalyser.util.LoginApiService;
 
 @Service
-@FeignClient(url= "https://spyware-api-production.up.railway.app" , name = "spywareLogin")
+@FeignClient(url= "http://localhost:8091" , name = "spywareLogin")
 public interface LoginAppService {
 
     @PostMapping("/login")
