@@ -30,7 +30,7 @@ public class MaliciousPortController {
 
     @GetMapping("/maliciousPort")
     public ModelAndView maliciousPort() {
-        ModelAndView modelAndView = new ModelAndView("maliciousPort");
+        ModelAndView modelAndView = new ModelAndView("/maliciousPort");
         List<MaliciousPort> maliciousPorts = maliciousPortService.buscaMaliciousPort(loginProp.getTokenBearer(loginService.getToken(loginProp)));
         modelAndView.addObject("maliciousPorts", maliciousPorts);
 
