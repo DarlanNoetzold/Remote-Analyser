@@ -31,6 +31,10 @@ public class BadLanguage {
         this.word = word;
     }
 
+    public BadLanguage(String word){
+        this.word = word;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
