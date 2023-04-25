@@ -36,7 +36,6 @@ public class BuscaController {
         List<Alerta> alertas = alertaService.buscaAlertasPcId(loginProp.getTokenBearer(loginService.getToken(loginProp)), pcId);
         modelAndView.addObject("alertas", alertas);
 
-
         return modelAndView;
     }
 
@@ -55,8 +54,7 @@ public class BuscaController {
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("totalItems", totalItems);
         model.addAttribute("alertas", alertas.getContent());
-
-
+        
         return "busca";
     }
 }
