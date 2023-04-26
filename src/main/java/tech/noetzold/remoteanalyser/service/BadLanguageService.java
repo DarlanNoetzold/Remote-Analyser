@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @FeignClient(url= "http://localhost:8091" , name = "spyware")
-public interface BadLanguageService {
+public interface  BadLanguageService {
 
     @PostMapping("/badLanguage/save")
     void saveBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @RequestBody BadLanguage badLanguage);
