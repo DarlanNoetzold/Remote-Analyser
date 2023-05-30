@@ -42,8 +42,8 @@ public class BadLanguageControllerTest {
     @Test
     public void testBadLanguage() throws Exception {
         List<BadLanguage> badLanguages = new ArrayList<>();
-        badLanguages.add(new BadLanguage("test1"));
-        badLanguages.add(new BadLanguage("test2"));
+        badLanguages.add(new BadLanguage());
+        badLanguages.add(new BadLanguage());
 
         given(badLanguageService.buscaBadLanguage(anyString())).willReturn(badLanguages);
 
