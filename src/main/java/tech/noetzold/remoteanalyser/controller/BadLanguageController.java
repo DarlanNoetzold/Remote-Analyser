@@ -26,7 +26,7 @@ public class BadLanguageController {
     @Autowired
     private LoginApiService loginProp;
 
-    @GetMapping("/badLanguage")
+    @GetMapping("/badLanguage/getAll")
     public ModelAndView badLanguage() {
         ModelAndView modelAndView = new ModelAndView("/badLanguage");
         List<BadLanguage> badLanguages = badLanguageService.buscaBadLanguage(loginProp.getTokenBearer(loginService.getToken(loginProp)));
