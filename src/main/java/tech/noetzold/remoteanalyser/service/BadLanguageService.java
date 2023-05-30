@@ -11,13 +11,13 @@ import java.util.List;
 @FeignClient(url= "http://localhost:8091" , name = "spyware")
 public interface  BadLanguageService {
 
-    @PostMapping("/badLanguage/save")
+    @PostMapping("/language/save")
     void saveBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @RequestBody BadLanguage badLanguage);
 
-    @GetMapping("/badLanguage/getAll")
+    @GetMapping("/language/getAll")
     List<BadLanguage> buscaBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader);
 
-    @DeleteMapping("/badLanguage/remove/{id}")
+    @DeleteMapping("/language/remove/{id}")
     void removeBadLanguage(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 
 }
