@@ -13,6 +13,19 @@
 * Uma aplicação Web feita com Spring Framework. Esta aplicação consome os dados da API Gateway, tem autenticação através de um login e uma interface web para a visualização dos dados. Tendo três telas, uma para login, outra para Home (que irá carregar todos os Alertas, separados por paginação) e uma tela de Busca (que será possível filtrar os dados por endereço MAC).
 
 ---
+
+## Como utilizar:
+* A aplicação completa contendo todos os microserviços configurados pode ser obtida no [DockerHub](https://hub.docker.com/repository/docker/darlannoetzold/tcc-spyware/general).
+* Para executá-lo de maneira mais fácil basta excutar os seguintes comandos:
+```
+docker container run --platform=linux/amd64 -it -p 8091:8091 -p 8090:8090 -p 5000:5000 -p 9091:9090 -p 3000:3000 --name=app -d darlannoetzold/tcc-spyware:4.0
+
+docker exec -itd app /init-spyware-api.sh
+docker exec -itd app /init-remoteanalyser.sh
+docker exec -itd app /init-handler-hatespeech.sh
+```
+
+
 ## API:
 * A API:
 <br>Link: https://spyware-api.herokuapp.com/
