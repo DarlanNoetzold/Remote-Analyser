@@ -42,7 +42,7 @@ public class CadastroController {
             mav.addObject("msg", msg);
             return mav;
         }
-        UserImp userEncode = new UserImp(user.getUsername(), passwordEncoder.encode(user.getPassword()));
+        UserImp userEncode = new UserImp(user.getUsername(), passwordEncoder.encode(user.getPassword()), user.getRoles());
         userRepository.save(userEncode);
         ModelAndView mav = new ModelAndView("cadastro");
         mav.addObject("successRegister", "Usuário Cadastrado!");
