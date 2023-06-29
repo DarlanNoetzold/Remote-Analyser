@@ -2,6 +2,7 @@ package tech.noetzold.remoteanalyser.security;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,10 +28,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserImp usuario = usuarioRepo.findByUsername(username);
 
-        Set<GrantedAuthority> authorities = new HashSet<>();
+        Set<GrantedAuthority> authorities = usuario.getRoles().stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toSet());
 
-        User userSpring = new User(usuario.getUsername(), usuario.getPassword(), authorities);
-
-        return userSpring;
+        return new User(usuario.getUsername(), usuario.getPassword(), authorities);
     }
 }
