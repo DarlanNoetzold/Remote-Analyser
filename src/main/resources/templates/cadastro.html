@@ -9,18 +9,25 @@
     <div th:replace="~{base :: titulo('Cadastro')}"></div>
 
     <div class="cardcolor card mb-3">
-        <div class="error-message" th:each = "m : ${msg}">
-            <span th:text = "${m}"></span>
+        <div class="error-message" th:each="m : ${msg}">
+            <span th:text="${m}"></span>
         </div>
-        <span class="success-message" th:text = "${successRegister}"></span>
+        <span class="success-message" th:text="${successRegister}"></span>
         <form th:action="@{/salvarUser}" class="card-body" method="post">
             <div class="form-group">
                 <label>Usuário</label>
-                <input name="username"  class="form-control" placeholder="usuário"/>
+                <input name="username" class="form-control" placeholder="usuário"/>
             </div>
             <div class="form-group">
                 <label>Senha</label>
                 <input type="password" name="password" class="form-control" placeholder="senha"/>
+            </div>
+            <div class="form-group">
+                <label>Role</label>
+                <select name="roles" class="form-control">
+                    <option value="ROLE_admin">Admin</option>
+                    <option value="ROLE_user">User</option>
+                </select>
             </div>
             <button class="engraved buttoncolor" type="submit">Cadastrar</button>
         </form>
