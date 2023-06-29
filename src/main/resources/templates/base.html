@@ -82,7 +82,7 @@
 			<form id="form-login" th:action="@{/logout}" method="post"></form>
 		</span>
 	</div>
-	<div sec:authorize="isAuthenticated()">
+	<div sec:authorize="hasRole('admin')">
 		<div class="col">
 			<nav class="nav">
 			  	<a class="linkcolor nav-link" th:href="@{/home}">Home</a>
