@@ -3,6 +3,7 @@ package tech.noetzold.remoteanalyser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,11 +24,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 				.authorizeRequests()
 				.antMatchers("/css/**", "/js/**", "/resources/**", "/error").permitAll()
+				.antMatchers("/home").hasRole("admin")
+				.antMatchers("/home/**").hasRole("admin")
+				.antMatchers("/badLanguage").hasRole("admin")
+				.antMatchers("/badLanguage/**").hasRole("admin")
+				.antMatchers("/maliciousPort").hasRole("admin")
+				.antMatchers("/maliciousPort/**").hasRole("admin")
+				.antMatchers("/maliciousProcess").hasRole("admin")
+				.antMatchers("/maliciousProcess/**").hasRole("admin")
+				.antMatchers("/maliciousWebsite").hasRole("admin")
+				.antMatchers("/maliciousWebsite/**").hasRole("admin")
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
 				.loginPage("/login").failureForwardUrl("/login-error")
-				.defaultSuccessUrl("/home")
+				.defaultSuccessUrl("/login-success")
 				.permitAll()
 				.and()
 				.logout()
@@ -45,5 +56,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public static PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder(12);
 	}
-
 }
