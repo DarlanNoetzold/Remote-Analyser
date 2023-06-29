@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{base :: head}" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body id="backforall">
+<div th:replace="~{base :: logo}"></div>
+
+<div class="container">
+    <div th:replace="~{base :: titulo('Alertas')}" ></div>
+
+    <div class="card mb-3" th:each="alerta : ${alertas}">
+        <div class="card-header alert-dark" th:text="${alerta.id}">id</div>
+
+        <div class="cardcolor card-body">
+            <div class="row">
+                <div class="form-group col-12 col-sm-8  mb-3">
+                    <br>
+                    <div>Endereco MAC do PC</div>
+                    <div> <input class="form-control" th:value="${alerta.pcId}" value="Id do PC"/></div>
+
+                    <div>Entrada da texto que gerou o Alerta</div>
+                    <div>
+                        <textarea class="form-control" th:text="${alerta.imagem.productImg}"></textarea>
+                    </div>
+
+                    <div>Processos</div>
+                    <div>
+                        <textarea class="form-control" th:text="${alerta.processos}"></textarea>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div align="center" style="background-color:black;opacity:50%;padding:2px;" class="form-group" th:text="${alerta.data_cadastro}">data_cadastro</div>
+                    <div class="container-anim">
+                        <img class="img-thumbnail" th:src="@{'data:image/png;base64,'+${alerta.imagem.generateBase64Image()}}"/>
+                    </div>
+                    <div align="center">
+                        <br>
+                        <a class="engraved buttoncolor" th:href="@{/home/remover/{id}(id = ${alerta.id}) }">Remover</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:if="${errorMessage}">
+        <p th:text="${errorMessage}" class="error-message"></p>
+    </div>
+</div>
+</body>
+</html>
