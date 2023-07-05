@@ -47,11 +47,6 @@ docker exec -itd app /init-handler-hatespeech.sh
 <br>Link: https://github.com/DarlanNoetzold/spyware
 
 ---
-## Aplicacao Web:
-* Heroku:
-<br>Link: https://remoteanalyser.herokuapp.com/home
-
----
 
 ## Imagens da interface:
 ### Tela de Login:
