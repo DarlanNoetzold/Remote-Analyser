@@ -20,6 +20,9 @@ public interface AlertaService{
     @GetMapping("/alert/pcId/{pcId}")
     List<Alerta> buscaAlertasPcId(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("pcId") String pcId);
 
+    @GetMapping("/alert/{id}")
+    Alerta buscaAlertaById(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
+
     @DeleteMapping("/alert/remove/{id}")
     void removeAlerta(@RequestHeader(value = "Authorization", required = true) String authorizationHeader, @PathVariable("id") Long id);
 }
