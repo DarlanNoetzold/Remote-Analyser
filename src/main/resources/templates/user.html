@@ -7,6 +7,22 @@
 <div th:replace="~{base :: logo}"></div>
 
 <div class="container">
+    <br>
+    <div class="form-group mb-3">
+        <div class="cardcolor card-body">
+            <form th:action="@{/alertas/validar}" method="post">
+                <div>ID do Alerta: <input type="text" name="alertaId" class="form-control" /></div>
+                <div>PC ID: <input type="text" name="pcId" class="form-control" /></div>
+                <div>Hash: <input type="text" name="hash" class="form-control" /></div>
+                <br>
+                <button type="submit" class="btn btn-primary">Validar Alerta</button>
+                <div th:if="${resultadoValidacao}">
+                    <p th:text="${resultadoValidacao}" class="resultado-validacao"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div th:replace="~{base :: titulo('Alertas')}" ></div>
 
     <div class="card mb-3" th:each="alerta : ${alertas}">
@@ -36,7 +52,7 @@
                     </div>
                     <div align="center">
                         <br>
-                        <a class="engraved buttoncolor" th:href="@{/home/remover/{id}(id = ${alerta.id}) }">Remover</a>
+                        <a class="engraved buttoncolor" th:href="@{/alertas/download/{id}(id = ${alerta.id}) }">Registrar Alerta</a>
                     </div>
                 </div>
             </div>
