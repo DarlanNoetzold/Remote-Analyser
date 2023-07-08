@@ -8,7 +8,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.remoteanalyser.model.Alerta;
 import tech.noetzold.remoteanalyser.service.AlertaService;
@@ -19,6 +22,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ValidateAlert {
@@ -69,14 +74,25 @@ public class ValidateAlert {
     }
 
     @PostMapping("/alertas/validar")
-    public ResponseEntity<String> validarAlerta(@RequestBody Alerta alerta, @RequestParam("hash") String hash) {
-        String hashAlert = generateHash(alerta.getId(), alerta.getPcId());
+    public String validarAlerta(@RequestParam("alertaId") Long alertaId, @RequestParam("pcId") String pcId, @RequestParam("hash") String hash, Model model, @AuthenticationPrincipal UserDetails userDetails) {
+
+        try {
+            List<Alerta> alertas = alertaService.buscaAlertasPcId(loginProp.getTokenBearer(loginService.getToken(loginProp)), userDetails.getUsername());
+            model.addAttribute("alertas", alertas);
+        }catch (Exception e){
+            model.addAttribute("alertas", new ArrayList<Alerta>());
+            model.addAttribute("errorMessage", "Nenhum alerta encontrado.");
+        }
+
+        String hashAlert = generateHash(alertaId, pcId);
 
         if (hashAlert.equals(hash)) {
-            return ResponseEntity.ok("O hash do Alerta é válido");
+            model.addAttribute("resultadoValidacao", "O hash do Alerta é válido");
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O hash do Alerta é inválido");
+            model.addAttribute("resultadoValidacao", "O hash do Alerta é inválido");
         }
+
+        return "user";
     }
 
     public String generateHash(Long id, String pcId) {
