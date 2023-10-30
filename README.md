@@ -27,17 +27,11 @@ docker exec -itd app /init-handler-hatespeech.sh
 
 
 ## API:
-* A API:
-<br>Link: https://spyware-api.herokuapp.com/
-* Documentação da API:
-<br>Link: https://spyware-api.herokuapp.com/swagger-ui/index.html
 * Repositório no GitHub:
 <br>Link: https://github.com/DarlanNoetzold/spyware-API
 
 ---
 ## API do HateSpeech:
-* A API:
-<br>Link: https://hate-speech-portuguese.herokuapp.com
 * Repositório no GitHub:
 <br>Link: https://github.com/DarlanNoetzold/HateSpeech-portuguese
 
