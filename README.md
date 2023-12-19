@@ -42,32 +42,20 @@ docker exec -itd app /init-handler-hatespeech.sh
 
 ---
 
-## Interface Images:
-### Login Screen:
-![image](https://user-images.githubusercontent.com/41628589/160593312-90b87d92-2403-4dcf-a635-b91360c191cf.png)
-
-### Home:
-![image](https://user-images.githubusercontent.com/41628589/200910622-72464226-5a8a-4320-99d4-7e888531272a.png)
-
-### Home Pagination:
-![image](https://user-images.githubusercontent.com/41628589/160594065-62737d49-b071-44a1-afec-772d92094578.png)
-
-### Search:
-![image](https://user-images.githubusercontent.com/41628589/160594303-f9e669ce-7d2f-4d45-ad08-63bb4eff3f3f.png)
-
----
-
 ## Diagrams:
 ### Use Case Diagram:
-![image](https://user-images.githubusercontent.com/41628589/200906769-9158761e-9169-4cfe-b894-58e7859fc8c1.png)
+![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/20a013ea-f19c-4ae1-8b41-1028cf4f47a8)
+
 
 ### Activity Diagrams:
-![image](https://user-images.githubusercontent.com/41628589/200906846-cf6603ad-d6ae-4640-b77e-ac35bb5f1f30.png)
+![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/9da75e73-432b-4a14-bce0-c3ad3ce49058)
+![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/a9eda03c-f7a6-4b6c-b84e-8096f880455a)
+![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/3ba82116-f562-45b0-b98b-ef0ba012efa6)
+  ![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/e3b657e5-37a2-4e07-8140-6cb2a69fa652)
 
-![image](https://user-images.githubusercontent.com/41628589/200906913-822d3be4-65bd-4c3f-88b2-9ec4b24f03a0.png)
 
 ### Architecture Diagram:
-![image](https://user-images.githubusercontent.com/41628589/200907023-eb8111e5-e6f1-42af-a8b6-55cfbeabbaf8.png)
+![image](https://github.com/DarlanNoetzold/Remote-Analyser/assets/41628589/e92ad344-b319-4b21-91cb-28ff6b1e79d7)
 
 ---
 
